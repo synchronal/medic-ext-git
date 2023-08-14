@@ -229,7 +229,7 @@ dependencies = [
 
 [[package]]
 name = "medic-step-git"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "clap",
  "indoc",
@@ -238,7 +238,7 @@ dependencies = [
 
 [[package]]
 name = "medic-step-github"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "clap",
  "indoc",
