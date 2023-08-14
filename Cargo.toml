@@ -4,6 +4,7 @@ members = [
     "medic-step-git",
     "medic-step-github",
 ]
+resolver = "2"
 
 [workspace.dependencies]
 clap = { version = "4.1.8" }
