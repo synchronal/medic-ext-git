@@ -42,10 +42,10 @@ pub fn origin_to_github_url(origin: String) -> String {
     let trailing_git_re = Regex::new(r"\.git$").unwrap();
     let origin = trailing_git_re.replace_all(&origin, "");
 
-    let origin_re = Regex::new(r"^([^@]+@|[^:]+://)([^:]+)[:/](.+)$").unwrap();
+    let origin_re = Regex::new(r"^([^@]+@|[^:]+://)(ssh.)?([^:]+)(:443)?[:/](.+)$").unwrap();
     let caps = origin_re.captures(&origin).unwrap();
-    let url = caps.get(2).unwrap().as_str();
-    let repository = caps.get(3).unwrap().as_str();
+    let url = caps.get(3).unwrap().as_str();
+    let repository = caps.get(5).unwrap().as_str();
 
     format!("https://{}/{}", url, repository)
 }
@@ -67,6 +67,13 @@ mod tests {
     #[test]
     fn github_actions_url_from_https() {
         let url = super::origin_to_github_url("https://github.com/my-org/my-repo".to_owned());
+        assert_eq!(url, "https://github.com/my-org/my-repo")
+    }
+
+    #[test]
+    fn github_actions_url_from_https_ssh() {
+        let url =
+            super::origin_to_github_url("https://ssh.github.com:443/my-org/my-repo".to_owned());
         assert_eq!(url, "https://github.com/my-org/my-repo")
     }
 
