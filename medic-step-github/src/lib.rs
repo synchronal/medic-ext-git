@@ -47,7 +47,7 @@ pub fn origin_to_github_url(origin: String) -> String {
     let url = caps.get(3).unwrap().as_str();
     let repository = caps.get(5).unwrap().as_str();
 
-    format!("https://{}/{}", url, repository)
+    format!("https://{url}/{repository}")
 }
 
 #[cfg(test)]
