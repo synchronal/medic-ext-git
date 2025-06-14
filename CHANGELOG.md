@@ -4,7 +4,8 @@
 
 ## v0.2.2
 
-- Fix `medic-step-github link-to-actions` to handle different formats of remotes.
+- Fix `medic-step-github link-to-actions` to handle different formats of
+  remotes.
 
 ## v0.2.1
 

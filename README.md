@@ -1,18 +1,18 @@
 # Medic Git
 
-An extension pack for using [medic](https://github.com/synchronal/medic-rs)
-with git.
+An extension pack for using
+[medic](https://github.com/synchronal/medic-rs) with git.
 
 ## Installation
 
-```shell
+``` shell
 brew tap synchronal/tap
 brew install medic-ext-git
 ```
 
 Example `Brewfile`:
 
-```shell
+``` shell
 tap 'synchronal/tap'
 
 brew  'synchronal/tap/medic'
@@ -21,7 +21,7 @@ brew  'synchronal/tap/medic-ext-git'
 
 ## Usage
 
-```toml
+``` toml
 [doctor]
 
 checks = []
@@ -51,7 +51,6 @@ steps = [
 ]
 ```
 
-
 ## medic-stp-git
 
 Steps for interacting with git.
@@ -60,7 +59,7 @@ Steps for interacting with git.
 
 Pull the current repository with `--rebase`.
 
-```shell
+``` shell
 medic-step-git pull
 ```
 
@@ -68,10 +67,9 @@ medic-step-git pull
 
 Push the current repository to `origin`.
 
-```shell
+``` shell
 medic-step-git push
 ```
-
 
 ## medic-step-github
 
@@ -79,11 +77,10 @@ Steps for helping with repositories that are hosted in GitHub.
 
 ### link-to-actions
 
-Using the git remote configured for `--remote`, print out the URL
-for its GitHub Actions. Defaults to `origin`.
+Using the git remote configured for `--remote`, print out the URL for
+its GitHub Actions. Defaults to `origin`.
 
-```shell
+``` shell
 medic-step-github link-to-actions
 medic-step-github link-to-actions --remote <remote>
 ```
-
